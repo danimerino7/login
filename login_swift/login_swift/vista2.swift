@@ -8,11 +8,18 @@
 import UIKit
 
 class vista2: UIViewController {
-
+    
+    
+    @IBOutlet weak var nombreuser: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //cargo el nombre del usuario recogido de user default al logear
+        let defaults = UserDefaults.standard
+        nombreuser.text = defaults.string(forKey: "usuario")
+        
+        defaults.setValue(defaults.string(forKey: "usuario"), forKey: "registrado")
     }
     
 
@@ -27,3 +34,4 @@ class vista2: UIViewController {
     */
 
 }
+	
